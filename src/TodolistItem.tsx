@@ -1,4 +1,5 @@
 import {Task} from "./App.tsx";
+import {Button} from "./Button.tsx";
 
 type Props = {
     title: string
@@ -18,7 +19,7 @@ export const TodolistItem = (props:Props)=>{
             <h4>{subTitle}</h4>
             <div>
                 <input/>
-                <button>+</button>
+                <Button title={"+"}/>
             </div>
             {tasks.length === 0 ? ("Тасок нет"): (
             <ul>
@@ -33,9 +34,9 @@ export const TodolistItem = (props:Props)=>{
             )}
             <div>{date}</div>
             <div>
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
+                <Button title={"All"}/>
+                <Button title={"Active"}/>
+                <Button title={"Completed"}/>
             </div>
         </div>
     )
