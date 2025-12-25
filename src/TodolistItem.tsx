@@ -1,5 +1,4 @@
 import {Task} from "./App.tsx";
-import {FC} from "react";
 
 type Props = {
     title: string
@@ -9,7 +8,7 @@ type Props = {
     date?: string
 }
 
-export const TodolistItem: FC<Props> = (props)=>{
+export const TodolistItem = (props:Props)=>{
 
     const {title, subTitle, tasks, date} = props
 
@@ -21,14 +20,17 @@ export const TodolistItem: FC<Props> = (props)=>{
                 <input/>
                 <button>+</button>
             </div>
+            {tasks.length === 0 ? ("Тасок нет"): (
             <ul>
                 {tasks.map((el)=>{
                     return (
                     <li key={el.id}>
-                        <input type="checkbox" checked={el.isDone}/> <span>{el.title}</span>
+                        <input type="checkbox" checked={el.isDone}/>
+                        <span>{el.title}</span>
                     </li>
                     )})}
             </ul>
+            )}
             <div>{date}</div>
             <div>
                 <button>All</button>
