@@ -6,17 +6,17 @@ type Props = {
     subTitle?: string
     description?: string
     tasks: Task[]
+    date?: string
 }
 
 export const TodolistItem: FC<Props> = (props)=>{
 
-    const {title, subTitle, tasks} = props
-
-    const title = props.title
+    const {title, subTitle, tasks, date} = props
 
     return (
         <div>
             <h3>{title}</h3>
+            <h4>{subTitle}</h4>
             <div>
                 <input/>
                 <button>+</button>
@@ -29,6 +29,7 @@ export const TodolistItem: FC<Props> = (props)=>{
                     </li>
                     )})}
             </ul>
+            <div>{date}</div>
             <div>
                 <button>All</button>
                 <button>Active</button>

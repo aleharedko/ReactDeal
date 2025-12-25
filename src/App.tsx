@@ -23,7 +23,7 @@ export const App = () => {
 
     return (
         <div className="app">
-            <TodolistItem title="What to learn" tasks={tasks1}/>
+            <TodolistItem title="What to learn" tasks={tasks1} date={"25.12.205"}/>
             <TodolistItem title="Songs" tasks={tasks2}/>
         </div>
     )
