@@ -10,7 +10,7 @@ export type Task = {
 
 export const App = () => {
 
-    let tasks1 = [
+    let tasks = [
         { id: 1, title: 'HTML&CSS', isDone: true },
         { id: 2, title: 'JS', isDone: true },
         { id: 3, title: 'ReactJS', isDone: false },
@@ -19,19 +19,15 @@ export const App = () => {
         { id: 6, title: 'Redux', isDone: false },
     ]
 
-    const tasks2: Task[] = []
-
-    const deletTasks = (taskId: Task["id"]) => {
-        const currentState = tasks1.filter(t => t.id !== taskId)
-        tasks1 = currentState
-        console.log(tasks1)
-    }
+    const deleteTask = (taskId:number ) => {
+        tasks = tasks.filter(t => {
+        return t.id !== taskId
+        })
 
     return (
         <div className="app">
             <Fragment>
-                <TodolistItem title="What to learn" tasks={tasks1} date={"25.12.205"}/>
-                <TodolistItem title="Songs" tasks={tasks2}/>
+                <TodolistItem title="What to learn" tasks={tasks} date={"25.12.205"} deleteTask={deleteTask}/>
             </Fragment>
         </div>
     )

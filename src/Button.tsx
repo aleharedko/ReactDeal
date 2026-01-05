@@ -4,5 +4,5 @@ type Props = {
 }
 export const Button = (props: Props) => {
     const {title} = props
-    return <button onClick={"click"}>{title}</button>
+    return <button>{title}</button>
 }
