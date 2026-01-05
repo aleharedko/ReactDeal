@@ -10,7 +10,7 @@ export type Task = {
 
 export const App = () => {
 
-    const tasks1 = [
+    let tasks1 = [
         { id: 1, title: 'HTML&CSS', isDone: true },
         { id: 2, title: 'JS', isDone: true },
         { id: 3, title: 'ReactJS', isDone: false },
@@ -20,6 +20,12 @@ export const App = () => {
     ]
 
     const tasks2: Task[] = []
+
+    const deletTasks = (taskId: Task["id"]) => {
+        const currentState = tasks1.filter(t => t.id !== taskId)
+        tasks1 = currentState
+        console.log(tasks1)
+    }
 
     return (
         <div className="app">

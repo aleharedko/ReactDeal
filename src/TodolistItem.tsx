@@ -7,6 +7,7 @@ type Props = {
     description?: string
     tasks: Task[]
     date?: string
+
 }
 
 export const TodolistItem = (props:Props)=>{
@@ -28,6 +29,7 @@ export const TodolistItem = (props:Props)=>{
                     <li key={el.id}>
                         <input type="checkbox" checked={el.isDone}/>
                         <span>{el.title}</span>
+                        <Button title={x} onClick={}/>
                     </li>
                     )})}
             </ul>
